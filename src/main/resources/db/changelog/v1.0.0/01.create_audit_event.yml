@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: "01.create_audit_event.yml"
+      author: "Panyukov NN"
+      changes:
+        - createTable:
+            tableName: audit_event
+            remarks: "Событие аудита"
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: device
+                  type: varchar
+                  remarks: "Устройство"
+              - column:
+                  name: title
+                  type: varchar
+                  remarks: "Наименование события"
+              - column:
+                  name: type
+                  type: varchar
+                  remarks: "Тип события"
+              - column:
+                  name: payload
+                  type: jsonb
+                  remarks: "Дополнительная о событии"
+              - column:
+                  name: create_time
+                  type: timestamp
+                  remarks: "Время создания"
