@@ -24,3 +24,7 @@ spring:
 logging:
   web-logging:
     log-body: true
+  level:
+    root: INFO
+  console:
+    enabled: true
